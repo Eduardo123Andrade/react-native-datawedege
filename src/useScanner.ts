@@ -2,17 +2,7 @@ import { useEffect, useId, useState } from 'react';
 import { DeviceEventEmitter } from 'react-native';
 import { onInit } from 'react-native-datawedege';
 
-type OnCallBackScanner = (data: string) => void;
-
-interface UseScannerConfig {
-  id?: string;
-  canScan?: boolean;
-  canReset?: boolean;
-  timeOutToReset?: number;
-  onCallbackScanner?: OnCallBackScanner;
-}
-
-const DEFAULT_CONFIG: UseScannerConfig = {
+const DEFAULT_CONFIG: ScannerConfig = {
   canReset: true,
   canScan: true,
   timeOutToReset: 500,
@@ -20,7 +10,7 @@ const DEFAULT_CONFIG: UseScannerConfig = {
 
 export const useScanner = () => {
   const [scanner, setScanner] = useState<string>();
-  const [config, _setConfig] = useState<UseScannerConfig>(DEFAULT_CONFIG);
+  const [config, _setConfig] = useState<ScannerConfig>(DEFAULT_CONFIG);
 
   const _id = useId();
 
@@ -28,7 +18,11 @@ export const useScanner = () => {
     setScanner(data);
   };
 
-  const setConfig = (config: UseScannerConfig) => {
+  /**
+   *
+   * @param {ScannerConfig} config
+   */
+  const setConfig = (config: ScannerConfig) => {
     _setConfig({ ...DEFAULT_CONFIG, ...config });
   };
 
