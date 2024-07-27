@@ -8,17 +8,21 @@ rn datawedege
 npm install react-native-datawedege
 ```
 
+```sh
+yarn add react-native-datawedege
+```
+
 ## Usage
 
-
 ```js
-import { multiply } from 'react-native-datawedege';
+import { creeateProfile } from 'react-native-datawedege';
 
 // ...
 
-const result = await multiply(3, 7);
-```
+createdProfile('ProfileName', 'com.example.SCANNER', false);
 
+const { scanner, setConfig } = useScanner();
+```
 
 ## Contributing
 
