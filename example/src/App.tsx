@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
-import { multiply, createProfile, useScanner } from 'react-native-datawedege';
+import { createProfile, useScanner } from 'react-native-datawedege';
 import { ModalScanner, Scanner } from './components';
 
 createProfile('Zebra Scanner', 'br.com.example.zebra.SCANNER');
@@ -17,12 +17,6 @@ export default function App() {
 
   const { scanner, setConfig } = useScanner();
 
-  // const ref = React.useRef<Button>(null);
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   const onRequestClose = () => {
     setShowModal1(false);
     setShowModal2(false);
@@ -32,7 +26,8 @@ export default function App() {
   React.useEffect(() => {
     const canScan = !(showModal1 || showModal1 || showModal1);
     console.log({ canScan });
-    setConfig({ canScan, canReset: false });
+    // setConfig({ canScan, canReset: false });
+    setConfig({});
   }, [showModal1, showModal1, showModal1]);
 
   React.useEffect(() => {
