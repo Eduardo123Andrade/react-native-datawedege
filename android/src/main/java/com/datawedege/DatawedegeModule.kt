@@ -28,11 +28,6 @@ class DatawedegeModule internal constructor(context: ReactApplicationContext) :
     resultReceiveBroadcast.register(_context, getResultFilter())
   }
 
-  @ReactMethod
-  override fun multiply(a: Double, b: Double, promise: Promise) {
-    promise.resolve(a * b)
-  }
-
   override fun getName(): String {
     return NAME
   }
