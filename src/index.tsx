@@ -25,13 +25,22 @@ const Datawedege = DatawedegeModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Datawedege.multiply(a, b);
-}
-
+/**
+ * Function to start a receiver
+ * @param id id of scanner receiver
+ * @returns
+ */
 export function onInit(id: string) {
   return Datawedege.onInit(id);
 }
+
+/**
+ * Function to created a profile on Datawedege
+ * @param profileName Name of zebra profile
+ * @param intentAction Intent action
+ * @param keystrokeEnabled Optional params to enable keystroke. Default is false
+ * @returns
+ */
 
 export function createProfile(
   profileName: string,
