@@ -5,19 +5,19 @@ rn datawedege
 ## Installation
 
 ```sh
-npm install react-native-datawedege
+npm install react-native-datawedge
 
 ```
 or
 
 ```sh
-yarn add react-native-datawedege
+yarn add react-native-datawedge
 ```
 
 ## Usage
 
 ```js
-import { creeateProfile } from 'react-native-datawedege';
+import { createProfile, useScanner } from 'react-native-datawedge';
 
 Improved Description:
 Creates a basic profile on datawedge based on incoming broadcast intent data.
@@ -37,7 +37,7 @@ const { scanner, setConfig } = useScanner();
 
 This step is optional as the default configuration will usually suffice.
 
-useEffec(() => {
+useEffect(() => {
   setConfig({
     id: "SCANNER_ID",
     canReset: true,
